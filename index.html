@@ -9,8 +9,8 @@
 <script type="module">
 // Replace these PUBLIC values with Supabase Project URL and publishable/anon key.
 // NEVER place a service_role key, Stripe secret, or other server secret here.
-const SUPABASE_URL='';
-const SUPABASE_PUBLISHABLE_KEY='';
+const SUPABASE_URL=sb_publishable_QAsCjgx6acrEOkihfQTvaQ_YwsATbMh;
+const SUPABASE_PUBLISHABLE_KEY=sb_publishable_QAsCjgx6acrEOkihfQTvaQ_YwsATbMh;
 const KEY='ascend-v2';let data;try{data=JSON.parse(localStorage.getItem(KEY))}catch{}if(!data){try{const old=JSON.parse(localStorage.getItem('ascend-v1'));data={entries:Array.isArray(old?.entries)?old.entries:[],hero:'Guardian',aura:'Violet'}}catch{data=null}}data??={entries:[],hero:'Guardian',aura:'Violet'};if(!Array.isArray(data.entries))data.entries=[];
 const classes={Guardian:'🛡️',Warrior:'⚔️',Mage:'🧙',Ranger:'🏹',Monk:'🥋',Titan:'🦾'},auras={Violet:'💜',Frost:'🩵',Ember:'🧡'};let client=null,user=null;
 const $=id=>document.getElementById(id);const save=()=>localStorage.setItem(KEY,JSON.stringify(data));save();
