@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#100b1c"><title>ASCEND 2 — Train. Level Up.</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#100b1c"><title>ASCEND 3.0 — Train. Level Up.</title><style>
 :root{font-family:Inter,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;color:#f8f5ff;background:#100b1c}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#25133f,#100b1c 55%)}main{max-width:520px;margin:auto;padding:22px 17px 105px}h1,h2,p{margin:0}h1{font-size:28px}h2{font-size:19px}small,.muted{color:#b7a8cf}.top,.between,.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.top{margin-bottom:24px}.brand{font-size:21px;font-weight:900;letter-spacing:2px;color:#dbb7ff}.chip{background:#33234c;border:1px solid #68439c;border-radius:30px;padding:8px 11px;font-size:12px;font-weight:800}.hero{background:linear-gradient(140deg,#37205d,#1c1430 70%);border:1px solid #60418b;border-radius:24px;padding:22px;text-align:center;box-shadow:0 12px 35px #0005}.avatar{font-size:77px;filter:drop-shadow(0 0 22px #a16dff77);margin:14px}.eyebrow{font-size:11px;letter-spacing:2px;color:#d2b5ff}.bar{height:9px;border-radius:99px;background:#49365e;overflow:hidden;margin-top:10px}.bar>span{display:block;height:100%;background:linear-gradient(90deg,#a976ff,#65e4fc);width:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:15px 0}.stat,.card{background:#211831;border:1px solid #433258;border-radius:17px;padding:15px}.stat strong{display:block;font-size:21px;margin-top:6px}.section{display:flex;justify-content:space-between;align-items:center;margin:23px 0 12px}.card{margin-bottom:11px}.quest{display:flex;align-items:center;gap:13px}.quest .symbol{font-size:29px}.quest>div:nth-child(2){flex:1}.quest p{font-size:12px;color:#b7a8cf;margin-top:5px}.reward{color:#c9a0ff;font-weight:800;font-size:12px}.primary,.secondary{border:0;border-radius:13px;padding:15px;width:100%;font-weight:800;font-size:14px;cursor:pointer}.primary{background:linear-gradient(100deg,#ac7cff,#78dbf4);color:#140d23}.secondary{background:#3b2a54;color:#f4eaff;border:1px solid #68458f}.inline{width:auto;padding:10px 14px}.page{display:none}.page.active{display:block}label{display:block;font-size:12px;color:#c9b7e0;margin:9px 0 5px}input,select{width:100%;background:#30233f;color:#fff;border:1px solid #5b4674;border-radius:11px;padding:12px;font-size:16px}.fieldrow{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.history{border-bottom:1px solid #3e3050;padding:10px 0;font-size:13px}.tabs{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-around;background:#191125f5;border-top:1px solid #45345b;padding:13px 5px calc(12px + env(safe-area-inset-bottom));backdrop-filter:blur(12px)}.tabs button{border:0;background:none;color:#a99abf;font-size:11px;cursor:pointer}.tabs button.active{color:#d6b0ff;font-weight:900}.note{color:#b9abc9;font-size:12px;line-height:1.5;margin-top:12px}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.choice{background:#30233f;color:white;border:1px solid #57426e;border-radius:14px;padding:13px 4px;cursor:pointer;font-size:12px}.choice b{display:block;font-size:28px;margin-bottom:6px}.choice.selected{border:2px solid #bc89ff;background:#4b2d70}.hide{display:none!important}.ad{border:1px dashed #574b67;border-radius:12px;padding:14px;text-align:center;color:#b9acc8;font-size:12px;margin-top:20px}button:disabled{opacity:.5}.error{color:#ff9eb7;font-size:12px;margin-top:8px}.success{color:#9aefce;font-size:12px;margin-top:8px}</style></head><body><main><header class="top"><div class="brand">✦ ASCEND</div><div class="chip" id="levelPill">LEVEL 1</div></header>
 <section id="home" class="page active"><div class="hero"><div class="eyebrow">YOUR HERO'S JOURNEY</div><div class="avatar" id="heroAvatar">🛡️</div><h1 id="heroLevel">Level 1 Adventurer</h1><p class="muted" id="heroClass">Guardian</p><div class="between" style="margin-top:20px"><small>Experience</small><small id="xpText">0 / 200 XP</small></div><div class="bar"><span id="xpBar"></span></div></div><div class="stats"><div class="stat"><small>Sessions</small><strong id="workouts">0</strong></div><div class="stat"><small>Volume</small><strong id="volume">0</strong></div><div class="stat"><small>Quests</small><strong id="questCount">0</strong></div></div><div class="section"><h2>Next mission</h2><span class="reward">+100 XP</span></div><div class="card quest"><div class="symbol">⚔️</div><div><b>Complete a workout</b><p>Log your training and earn experience.</p></div></div><button class="primary" onclick="show('train')">ENTER TRAINING ARENA →</button><div class="section"><h2>Recent activity</h2></div><div class="card" id="recent">Your journey begins with your first workout.</div><div class="ad">Free-tier ad placement · Ads are not active</div></section>
 <section id="train" class="page"><div class="section"><h2>Training arena</h2></div><div class="card"><label for="exercise">Exercise</label><select id="exercise"><option>Bench Press</option><option>Squat</option><option>Deadlift</option><option>Overhead Press</option><option>Lat Pulldown</option><option>Barbell Row</option><option>Bicep Curl</option><option>Leg Press</option><option>Running</option></select><div class="fieldrow"><div><label for="sets">Sets</label><input id="sets" type="number" min="1" max="30" value="3"></div><div><label for="reps">Reps</label><input id="reps" type="number" min="1" max="100" value="10"></div><div><label for="weight">Kg</label><input id="weight" type="number" min="0" max="1000" step="0.5" value="20"></div></div><button class="primary" onclick="logWorkout()">COMPLETE SESSION · +100 XP</button><p class="note">Prototype: one logged exercise counts as one session. XP is earned per logged entry. Use honest logging; social rankings aren't enabled.</p></div><div class="section"><h2>ASCEND 3.0 · Advanced session</h2></div>
@@ -7,7 +7,7 @@
 <label for="advancedTitle">Session title</label><input id="advancedTitle" maxlength="100" value="Strength session">
 <label for="advancedExercise">Exercise</label><select id="advancedExercise"><option>Bench Press</option><option>Squat</option><option>Deadlift</option><option>Overhead Press</option><option>Lat Pulldown</option><option>Barbell Row</option><option>Bicep Curl</option><option>Leg Press</option><option>Running</option></select>
 <div class="fieldrow"><div><label for="advancedReps">Reps</label><input id="advancedReps" type="number" min="1" max="100" value="10"></div><div><label for="advancedWeight">Kg</label><input id="advancedWeight" type="number" min="0" max="1000" step="0.5" value="20"></div><div><label for="advancedRest">Rest sec</label><input id="advancedRest" type="number" min="15" max="600" value="90"></div></div>
-<button class="secondary" style="margin-top:12px" onclick="addAdvancedSet()">+ Add set</button>
+<button class="secondary" style="margin-top:12px" onclick="addAdvancedExercise()">+ Add Exercise to Session</button><p class="note">Choose an exercise above, add it to your session, then add its sets. Repeat for each exercise.</p><button class="secondary" style="margin-top:10px" onclick="addAdvancedSet()">+ Add Set to Selected Exercise</button>
 <div id="advancedList" class="note" style="margin:12px 0">No sets added yet.</div>
 <button class="secondary" onclick="startRestTimer()">Start rest timer</button><p id="restDisplay" class="note" aria-live="polite"></p>
 <button id="saveAdvanced" class="primary" style="margin-top:10px" onclick="saveAdvancedSession()">COMPLETE ADVANCED SESSION · +100 XP</button>
@@ -113,22 +113,49 @@ window.importLocalWorkouts=async()=>{if(!user||!client||!cloudReady||cloudBusy)r
 window.emailAuth=async method=>{if(!client){message('Connect Supabase first.');return}const email=$('email').value.trim(),password=$('password').value;if(!email||password.length<6){message('Enter an email and password with at least 6 characters.');return}try{const {error}=await client.auth[method]({email,password});if(error)throw error;message(method==='signUp'?'Check your email for a confirmation link if required.':'Sign-in requested.')}catch(e){message(e.message)}};
 window.oauth=async provider=>{if(!client){message('Connect Supabase and configure '+provider+' OAuth first.');return}const {error}=await client.auth.signInWithOAuth({provider,options:{redirectTo:location.origin+location.pathname}});if(error)message(error.message)};
 window.signOut=async()=>{if(!client)return;const {error}=await client.auth.signOut();if(error)message(error.message);else{await handleSession(null);message('Signed out.')}};
-const advancedDraft=[];let restTimer=null;
+const advancedDraft=[];const advancedExercises=[];let restTimer=null;
 function renderAdvancedDraft(){
  const target=$('advancedList');target.replaceChildren();
- if(!advancedDraft.length){target.textContent='No sets added yet.';return}
- advancedDraft.forEach((set,i)=>{
-  const row=document.createElement('div');row.className='history';
-  const label=document.createElement('span');label.textContent=`${i+1}. ${set.exercise} · ${set.reps} reps @ ${set.weight} kg `;
-  const remove=document.createElement('button');remove.className='secondary inline';remove.textContent='Remove';remove.onclick=()=>{advancedDraft.splice(i,1);renderAdvancedDraft()};
-  row.append(label,remove);target.append(row);
+ if(!advancedExercises.length){target.textContent='No exercises added yet. Choose one and tap + Add Exercise to Session.';return}
+ advancedExercises.forEach(exercise=>{
+  const card=document.createElement('div');card.className='card';card.style.margin='10px 0';
+  const heading=document.createElement('div');heading.className='between';
+  const name=document.createElement('b');name.textContent=exercise;
+  const removeExercise=document.createElement('button');removeExercise.className='secondary inline';
+  removeExercise.textContent='Remove exercise';
+  removeExercise.onclick=()=>{
+   if(cloudBusy)return;
+   const idx=advancedExercises.indexOf(exercise);if(idx>=0)advancedExercises.splice(idx,1);
+   for(let i=advancedDraft.length-1;i>=0;i--)if(advancedDraft[i].exercise===exercise)advancedDraft.splice(i,1);
+   renderAdvancedDraft();
+  };
+  heading.append(name,removeExercise);card.append(heading);
+  const sets=advancedDraft.map((set,i)=>({...set,index:i})).filter(s=>s.exercise===exercise);
+  if(!sets.length){const empty=document.createElement('p');empty.className='note';empty.textContent='No sets yet. Select this exercise above, enter reps and weight, then tap Add Set.';card.append(empty)}
+  sets.forEach((set,i)=>{
+   const row=document.createElement('div');row.className='history between';
+   const label=document.createElement('span');label.textContent=`Set ${i+1}: ${set.reps} reps @ ${set.weight} kg`;
+   const remove=document.createElement('button');remove.className='secondary inline';remove.textContent='Remove set';
+   remove.onclick=()=>{if(cloudBusy)return;advancedDraft.splice(set.index,1);renderAdvancedDraft()};
+   row.append(label,remove);card.append(row);
+  });
+  target.append(card);
  });
 }
+window.addAdvancedExercise=()=>{
+ if(cloudBusy)return;
+ const exercise=$('advancedExercise').value;
+ if(advancedExercises.includes(exercise)){$('advancedStatus').textContent=exercise+' is already in this session. Add sets to it below.';return}
+ advancedExercises.push(exercise);renderAdvancedDraft();
+ $('advancedStatus').textContent=exercise+' added. Enter reps and weight, then tap Add Set.';
+};
 window.addAdvancedSet=()=>{
+ if(cloudBusy)return;
  const exercise=$('advancedExercise').value,reps=Number($('advancedReps').value),weight=Number($('advancedWeight').value);
+ if(!advancedExercises.includes(exercise)){$('advancedStatus').textContent='First tap + Add Exercise to Session for '+exercise+'.';return}
  if(!Number.isInteger(reps)||reps<1||reps>100||!Number.isFinite(weight)||weight<0||weight>1000||Math.round(weight*100)!==weight*100){$('advancedStatus').textContent='Enter valid reps (1–100) and weight (0–1000 kg, max 2 decimals).';return}
  if(advancedDraft.filter(s=>s.exercise===exercise).length>=30){$('advancedStatus').textContent='Maximum 30 sets per exercise.';return}
- advancedDraft.push({exercise,reps,weight});renderAdvancedDraft();$('advancedStatus').textContent='Set added to draft (not yet saved).';
+ advancedDraft.push({exercise,reps,weight});renderAdvancedDraft();$('advancedStatus').textContent='Set added to '+exercise+' (not yet saved).';
 };
 window.startRestTimer=()=>{
  if(restTimer!==null)clearInterval(restTimer);
@@ -151,12 +178,12 @@ window.saveAdvancedSession=async()=>{
   const counter={};const payload=sets.map(s=>({session_id:sessionId,user_id:uid,exercise:s.exercise,set_number:(counter[s.exercise]=(counter[s.exercise]||0)+1),reps:s.reps,weight:s.weight}));
   const saved=await client.from('training_sets').insert(payload);if(saved.error)throw saved.error;
   const complete=await client.from('training_sessions').update({status:'completed'}).eq('id',sessionId).eq('user_id',uid).select('id').single();if(complete.error)throw complete.error;
-  if(epoch===authEpoch&&user?.id===uid){advancedDraft.length=0;renderAdvancedDraft();await loadCloudWorkouts(uid,epoch);$('advancedStatus').textContent='Session saved! +100 XP';show('home')}
+  if(epoch===authEpoch&&user?.id===uid){advancedDraft.length=0;advancedExercises.length=0;renderAdvancedDraft();await loadCloudWorkouts(uid,epoch);$('advancedStatus').textContent='Session saved! +100 XP';show('home')}
  }catch(e){
   $('advancedStatus').textContent='Save not confirmed: '+e.message+'. Check Supabase before retrying.';
   // Keep incomplete drafts in DB for diagnosis; only completed sessions earn XP.
  }finally{cloudBusy=false;$('saveAdvanced').disabled=false}
 };
 
-render();authUI();initAuth();
+render();renderAdvancedDraft();authUI();initAuth();
 </script></body></html>
